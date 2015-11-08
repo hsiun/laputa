@@ -3,8 +3,6 @@
   * wechat interface code
   */
 require_once dirname(__FILE__) . '/common/GlobalFunctions.php';
-//define your token
-define("TOKEN", "weixin");
 
 function checkSignature(){
     // you must define TOKEN by yourself

@@ -1,4 +1,6 @@
 <?php
+define("TOKEN", "weixin");
+
 define('HINT_TPL', "<xml>
     <ToUserName><![CDATA[%s]]></ToUserName>
     <FromUserName><![CDATA[%s]]></FromUserName>
