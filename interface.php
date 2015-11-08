@@ -7,7 +7,6 @@
 define("TOKEN", "weixin");
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->valid();
-$wechatObj->responseMsg();
 
 class wechatCallbackapiTest
 {
@@ -15,11 +14,18 @@ class wechatCallbackapiTest
     {
         $echoStr = $_GET["echostr"];
 
-        //valid signature , option
-        if($this->checkSignature()){
-        	echo $echoStr;
-        	//exit;
+        if (false == $this->checkSignature()){
+            exit(0);
         }
+
+        if ($echoStr) {
+            echo $echoStr;
+            exit(0);
+        }
+
+        $this->responseMsg();
+
+
     }
 
     public function responseMsg()
