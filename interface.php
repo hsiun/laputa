@@ -54,7 +54,7 @@ class wechatCallbackapiTest
 				if(!empty( $keyword ))
                 {
               		$msgType = "text";
-                	$contentStr = "Welcome to wechat world!";
+                	$contentStr = "$keyword Welcome to wechat world!";
                 	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 	echo $resultStr;
                 }else{
