@@ -1,0 +1,13 @@
+/home/hsium/workspace/wechat/
+▸ .git/
+▾ class/
+    WeChatCallBack.php
+    .WeChatCallBack.php.swp
+▾ common/
+    GlobalDefine.php
+    GlobalFunctions.php
+    Minilog.php
+▸ log/
+  .gitignore
+  interface.php
+  README.md
