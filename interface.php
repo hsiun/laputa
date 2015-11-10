@@ -1,6 +1,6 @@
 <?php
 /**
-  * wechat php test
+  * wechat interface code
   */
 
 //include other file
@@ -17,8 +17,6 @@ if (!empty($postStr)) {
     $retStr = $wechatObj->process();
     echo $retStr;
 }
-
-//$wechatValid->responseMsg();
 
 
 ?>
