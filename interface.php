@@ -4,7 +4,7 @@
   */
 
 //define your token
-require_once dirname(__FILE__) . '/common/GlocalDefine.php';
+require_once dirname(__FILE__) . '/common/GlobalDefine.php';
 
 $wechatValid = new WechatValid();
 $wechatValid->valid();
