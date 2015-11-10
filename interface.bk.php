@@ -3,10 +3,24 @@
   * wechat php test
   */
 require_once dirname(__FILE__) . '/common/GlobalFunctions.php';
+require_once dirname(__FILE__) . '/class/WeChatCallBackEchoServer.php';
 
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->valid();
-$wechatObj->responseMsg();
+//$wechatObj->responseMsg();
+$wechatObjTest = new WeChatCallBackEchoServer();
+$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+if (empty($postStr)) {
+    exit 0;
+}
+$postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+$ret = $wechatObjTest->init($postObj);
+if (!$ret) {
+    exit 0;
+}
+
+$retStr = $wechatObjTest->process();
+echo $retStr;
 
 class wechatCallbackapiTest
 {
