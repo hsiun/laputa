@@ -51,7 +51,7 @@ class MiniLog {
      * 将对应日志信息记录到对应文件中
      **/
     public function log($filename, $message) {
-        $handle = $this->_handleArr[$filename];
+        $handle = $this->getHandle($filename);
 
         $nowTime = time();
         $logPreffix = date('Y-m-d H:i:s', $nowTime);
