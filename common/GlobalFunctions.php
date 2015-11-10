@@ -3,7 +3,7 @@
  * 混杂的一些函数
  **/
 include_once dirname(__FILE__).'/GlobalDefine.php';
-include_once dirname(__FILE__).'/Minilog.php';
+include_once dirname(__FILE__).'/MiniLog.php';
 
 define("DEBUG", "DEBUG");
 define("INFO", "INFO");
