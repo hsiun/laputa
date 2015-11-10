@@ -1,7 +1,7 @@
 <?php
 
 class MiniLog {
-    private $_instance;
+    private static $_instance;
     private $_path; //log path
     private $_pid;  
     private $_handleArr; //保存文件fd的数组
