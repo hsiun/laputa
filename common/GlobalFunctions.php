@@ -2,6 +2,10 @@
 /**
  * 混杂的一些函数
  **/
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+ini_set('error_log', dirname(__FILE__) . '/../logs/error_log.txt');
+
 include_once dirname(__FILE__).'/GlobalDefine.php';
 include_once dirname(__FILE__).'/Minilog.php';
 
