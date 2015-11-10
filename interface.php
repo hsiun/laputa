@@ -6,7 +6,7 @@ ini_set('display_errors', '1');
 //include other file
 require_once dirname(__FILE__) . '/class/WechatValid.php';
 require_once dirname(__FILE__) . '/class/WechatCallBackEchoServer.php';
-require_once dirname(__FILE__) . '/class/GlobalFunctions.php';
+require_once dirname(__FILE__) . '/common/GlobalFunctions.php';
 
 $wechatValid = new WechatValid();
 $wechatValid->valid();
