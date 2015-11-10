@@ -8,8 +8,6 @@ require_once dirname(__FILE__) . '/class/WechatValid.php';
 require_once dirname(__FILE__) . '/class/WechatCallBackEchoServer.php';
 require_once dirname(__FILE__) . '/class/GlobalFunctions.php';
 
-interface_log(INFO, EC_OK, "OK FOR TEST");
-
 $wechatValid = new WechatValid();
 $wechatValid->valid();
 $wechatObj = new WechatCallBackEchoServer();
@@ -21,5 +19,5 @@ if (!empty($postStr)) {
     echo $retStr;
 }
 
-
+interface_log(INFO, EC_OK, "TEST OK");
 ?>
