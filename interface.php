@@ -5,11 +5,11 @@
 
 //define your token
 define("TOKEN", "weixin");
-$wechatObj = new wechatCallbackapiTest();
-$wechatObj->valid();
-$wechatObj->responseMsg();
+$wechatValid = new WechatValid();
+$wechatValid->valid();
+$wechatValid->responseMsg();
 
-class wechatCallbackapiTest
+class WechatValid
 {
 	public function valid()
     {
