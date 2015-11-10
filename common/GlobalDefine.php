@@ -1,5 +1,7 @@
 <?php
 #global define
+define("EC_OK","2000");
+define("ROOT_PATH","dirname(dirname(__FILE__))");
 
 define("TOKEN","weixin");
 define("TEXTTPL", "<xml>
