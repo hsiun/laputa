@@ -2,9 +2,8 @@
 /**
   * wechat php test
   */
+require_once dirname(__FILE__) . '/common/GlobalFunctions.php';
 
-//define your token
-define("TOKEN", "weixin");
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->valid();
 $wechatObj->responseMsg();
