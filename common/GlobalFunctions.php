@@ -60,13 +60,13 @@ function laputa_log($confName, $logLevel, $errorCode, $logMessage="no error"){
     }
 
     $logFileName = $confName . "_" . strtolower($logLevel);
-    MiniLog::instance(ROOT_PATH . "/log/")->log($logFileName, $prefix . $logMessage);
+    MiniLog::instance(ROOT_PATH . "/log/")->log($logFileName, $preffix . $logMessage);
 
     if (isLogLevelOff("DEBUG") || $logLevel == "DEBUG") {
         return ;
     } else {
         MiniLog::instance(ROOT_PATH . "/log/")->log($confName . "_" . "debug", 
-            $prefix . $logMessage);
+            $preffix . $logMessage);
     }
 }
 
