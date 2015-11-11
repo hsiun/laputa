@@ -1,10 +1,13 @@
 <?php
 require_once dirname(__FILE__) . '/../common/GlobalDefine.php';
+require_once dirname(__FILE__) . '/../common/GlobalFunctions.php';
 
 class WechatValid{
 	public function valid()
     {
         if (false == $this->checkSignature()) {
+            $ip = getIp();
+            interface_log(ERROR, EC_OTHER, 'malicious: ' . $ip);
             exit (0);
         }
 
