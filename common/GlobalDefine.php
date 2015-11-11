@@ -1,6 +1,8 @@
 <?php
 #global define
 define("EC_OK", "2000");
+define("EC_OTHER", "5000");
+
 define("ROOT_PATH", dirname(dirname(__FILE__)));
 
 define("TOKEN", "weixin");
