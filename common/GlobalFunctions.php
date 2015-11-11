@@ -75,7 +75,7 @@ function interface_log($logLevel, $errorCode, $logMessage = "no error msg") {
 }
 
 function getIp() {
-    if (isset($_SERVER) {
+    if (isset($_SERVER)) {
         if (isset($_SERVER["HTTP_X_FORWARDED_FOR"])) {
             $realip = $_SERVER["HTTP_X_FORWARDED_FOR"];
         } else if (isset($_SERVER["HTTP_CLIENT_IP"])) {
