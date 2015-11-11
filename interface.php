@@ -12,12 +12,24 @@ $wechatValid = new WechatValid();
 $wechatValid->valid();
 $wechatObj = new WechatCallBackEchoServer();
 $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-if (!empty($postStr)) {
-    $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
-    $ret = $wechatObj->init($postObj);
-    $retStr = $wechatObj->process();
-    echo $retStr;
+interface_log(INFO, EC_OK, 'request:' . $postStr);
+interface_log(INFO, EC_OK, 'get:' . var_export($_GET, true));
+
+if (empty($postStr)) {
+    interface_log(ERROR, EC_OK, "post data error!");
+    exit (0);
 }
 
-interface_log(INFO, EC_OK, "TEST OK");
+$postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+$ret = $wechatObj->init($postObj);
+if (!$ret) {
+    interface_log(ERROR, EC_OK, "init post object error!");
+    exit (0);
+}
+$retStr = $wechatObj->process();
+interface_log(INFO, EC_OK, "response:" . $retStr);
+echo $retStr;
+
+interface_log(INFO, EC_OK, "*************** interface request end ****************");
+interface_log(INFO, EC_OK, "******************************************************");
 ?>
