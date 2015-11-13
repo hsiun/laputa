@@ -14,4 +14,21 @@ define("TEXTTPL", "<xml>
     <Content><![CDATA[%s]]></Content>
     <FuncFlag>0</FuncFlag>
 </xml>")
+
+$GLOBALS['DB'] = array(
+    'DB' => array(
+        'HOST' => 'localhost',
+        'DBNAME' => 'db',
+        'USER' => 'root',
+        'PASSWD' => 'root',
+        'PORT' => 3306
+    ),
+    'TEST' => array(
+        'HOST' => 'localhost',
+        'DBNAME' => 'test',
+        'USER' => 'root',
+        'PASSWD' => 'root',
+        'PORT' => 3306
+    )
+)
 ?>

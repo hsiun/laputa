@@ -12,6 +12,8 @@ $wechatValid = new WechatValid();
 $wechatValid->valid();
 $wechatObj = new WechatCallBackEchoServer();
 $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+interface_log(INFO, EC_OK, "******************************************************");
+interface_log(INFO, EC_OK, "*************** interface requrest start *************");
 interface_log(INFO, EC_OK, 'request:' . $postStr);
 interface_log(INFO, EC_OK, 'get:' . var_export($_GET, true));
 
@@ -32,4 +34,5 @@ echo $retStr;
 
 interface_log(INFO, EC_OK, "*************** interface request end ****************");
 interface_log(INFO, EC_OK, "******************************************************");
+interface_log(INFO, EC_OK, "");
 ?>
