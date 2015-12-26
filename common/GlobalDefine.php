@@ -5,6 +5,8 @@ define("EC_OTHER", "5000");
 
 define("ROOT_PATH", dirname(dirname(__FILE__)));
 
+define("WX_API_URL", "https://api.weixin.qq.com/cgi-bin/");
+
 define("TOKEN", "weixin");
 define("TEXTTPL", "<xml>
     <ToUserName><![CDATA[%s]]></ToUserName>
@@ -13,7 +15,14 @@ define("TEXTTPL", "<xml>
     <MsgType><![CDATA[%s]]></MsgType>
     <Content><![CDATA[%s]]></Content>
     <FuncFlag>0</FuncFlag>
-</xml>")
+</xml>");
+
+$GLOBALS['APPID_APPSECRET'] = array(
+    'ES' => array(
+        'appId' => 'wxxxxxxxxxxxxxxxxxxxxxx',
+        'appSecret' => 'faijdijdddddddddddddddd'
+    )
+);
 
 $GLOBALS['DB'] = array(
     'DB' => array(
@@ -30,5 +39,5 @@ $GLOBALS['DB'] = array(
         'PASSWD' => 'root',
         'PORT' => 3306
     )
-)
+);
 ?>

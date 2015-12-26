@@ -10,6 +10,41 @@ define("INFO", "INFO");
 define("ERROR", "ERROR");
 
 /**
+ * 通过curl实现get请求
+ **/
+function doCurlGetRequest($url, $data, $timeout = 5) {
+    if($url == "" || $timeout <= 0) {
+        return false;
+    }
+    $url = $url . '?' . http_build_query($data);
+
+    $conn = curl_init((string)$url);
+    curl_setopt($conn, CURLOPT_HEADER, false);
+    curl_setopt($conn, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($conn, CURLOPT_TIMEOUT, (int)$timeout);
+
+    return curl_exec($conn);
+}
+
+/**
+ * 通过curl实现post请求
+ **/
+function doCurlPostRequest($url, $post_data, $timeout = 5) {
+    if ($url == "" || $post_data == "" || $timeout <= 0) {
+        return false;
+    }
+
+    $conn = curl_init((string)$url);
+    $conn = curl_setopt($conn, CURLOPT_HEADER, false);
+    $conn = curl_setopt($conn, CURLOPT_POSTFIELDS, $post_data);
+    $conn = curl_setopt($conn, CURLOPT_POST, true);
+    $conn = curl_setopt($conn, CURLOPT_REQURENTRANSFER, true);
+    $conn = curl_setopt($conn, CURLOPT_TIMEOUT,(int)$timeout);
+
+    return curl_exec($conn);
+}
+
+/**
  * 根据是否包含NO_判断日志是否开启
  **/
 function isLogLevelOff($logLevel){
